@@ -28,6 +28,9 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     builder (3.1.4)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -91,6 +94,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv-rails
   jquery-rails
   pg
   rails (= 4.0.2)

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'high_voltage', '~> 2.1'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.0.2'

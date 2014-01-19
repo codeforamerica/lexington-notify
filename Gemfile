@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'high_voltage', '~> 2.1'
 gem 'jquery-rails'
 gem 'pg'

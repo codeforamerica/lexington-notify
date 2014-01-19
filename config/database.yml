@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: cfa_rails_development
+  database: civic_rails_development
   pool: 5
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,7 +44,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: cfa_rails_test
+  database: civic_rails_test
   pool: 5
 
 
@@ -55,7 +55,7 @@ test:
 # production:
 #   adapter: postgresql
 #   encoding: unicode
-#   database: cfa_rails_production
+#   database: civic_rails_production
 #   pool: 5
-#   username: cfa_rails
+#   username: civic_rails
 #   password:

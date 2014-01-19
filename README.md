@@ -1,4 +1,4 @@
-# Code for America Rails App Template
+# CivicRails App Template
 
 This app template aims to be:
 

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CfaRails::Application.load_tasks
+CivicRails::Application.load_tasks

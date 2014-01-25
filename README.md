@@ -28,3 +28,15 @@ $ rake # confirm that the test suite passes
 $ git add .
 $ git commit -m "Rename to MyCivicApp"
 ```
+
+## Deploy
+
+```console
+$ heroku create <app name>
+$ heroku labs:enable user-env-compile --app <app name>
+$ heroku addons:add pgbackups:auto-month # recommended
+$ heroku config:set SECRET_KEY_BASE=`rake secret`
+$ git push heroku master
+$ heroku run rake db:migrate
+$ heroku open
+```

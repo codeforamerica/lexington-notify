@@ -7,10 +7,19 @@ This app template aims to be simple, beautiful, and easy to use. No fancy app ge
 ```console
 $ git clone https://github.com/invisiblefunnel/civic-rails my-civic-app
 $ cd my-civic-app
-$ rake rename[MyCivicApp]
 $ bundle install
 $ rake db:create
 $ rake db:migrate
 $ rake db:test:prepare
 $ rails s
+```
+
+## Customize
+
+Renaming the application is easy with the provided rake task. Pass the desired name as an argument to the rake task and all of the constants and database names will be updated.
+
+```console
+$ rake rename[MyCivicApp]
+$ git add .
+$ git commit -m "Rename to MyCivicApp"
 ```

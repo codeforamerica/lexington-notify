@@ -5,7 +5,7 @@ task :rename, [:name] => :environment do |t, args|
     after = args.name or raise "Pass a new name as an argument: $ rake rename[MyCivicApp]"
 
     # Swap in the new name
-    renamed = File.read(path).gsub(%r{#{before}}, after).gsub(%r{#{before.underscore}}, after.underscore)
+    renamed = File.read(path).gsub(/#{before}/, after).gsub(/#{before.underscore}/, after.underscore)
 
     # Write the updated contents back to the file
     File.write(path, renamed)

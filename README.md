@@ -31,6 +31,8 @@ $ git commit -m "Rename to MyCivicApp"
 
 ## Deploy
 
+See the [Getting Started](https://devcenter.heroku.com/articles/quickstart) guide if you haven't used Heroku before.
+
 ```console
 $ heroku create <app name>
 $ heroku labs:enable user-env-compile

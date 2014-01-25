@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'high_voltage', '~> 2.1'
 gem 'jquery-rails'

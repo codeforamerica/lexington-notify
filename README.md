@@ -11,6 +11,7 @@ $ bundle install
 $ rake db:create
 $ rake db:migrate
 $ rake db:test:prepare
+$ rake # run the complete test suite
 $ rails s
 ```
 

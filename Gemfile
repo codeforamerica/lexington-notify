@@ -16,6 +16,7 @@ group :production do
 end
 
 group :development do
+  gem 'brakeman', require: false
   gem 'foreman'
   gem 'quiet_assets'
 end

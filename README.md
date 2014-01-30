@@ -12,6 +12,7 @@ Here are some useful resources for getting started:
 ```console
 $ git clone https://github.com/invisiblefunnel/civic-rails my-civic-app
 $ cd my-civic-app
+$ git remote rename origin template
 $ bundle install
 $ rake db:create db:schema:load db:test:prepare
 $ rake # run the complete test suite

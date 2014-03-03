@@ -14,7 +14,7 @@ $ git clone https://github.com/invisiblefunnel/civic-rails my-civic-app
 $ cd my-civic-app
 $ git remote rename origin template
 $ bundle install
-$ rake db:create db:schema:load db:test:prepare
+$ rake db:create db:migrate db:test:prepare
 $ rake # run the complete test suite
 $ rails server
 ```
@@ -25,7 +25,7 @@ Renaming the application is easy with the provided rake task. Pass the desired n
 
 ```console
 $ rake rename[MyCivicApp]
-$ rake db:create db:schema:load db:test:prepare # setup new databases
+$ rake db:create db:migrate db:test:prepare # setup new databases
 $ rake # confirm that the test suite passes
 $ git add .
 $ git commit -m "Rename to MyCivicApp"

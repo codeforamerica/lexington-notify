@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the .env file as it should only be used in
+# development to hold secrets unfit for commiting to
+# the repository. If you have env vars used in development
+# which can be made public, place them in .env.development
+# or .env.test, accordingly.
+.env

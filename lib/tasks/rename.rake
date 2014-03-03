@@ -1,6 +1,6 @@
 desc "Rename this application"
 task :rename, [:name] => :environment do |t, args|
-  files  = Dir.glob(%w(rb yml).map{ |ext| Rails.root.join("**/*.#{ext}") } + %w(Rakefile))
+  files  = Dir.glob(%w(rb yml).map{ |ext| Rails.root.join("**/*.#{ext}") }) + %w(Rakefile .env.development .env.test)
   before = Rails.application.class.name.split('::').first
   after  = args.name or raise "Pass a new name as an argument: $ rake rename[MyCivicApp]"
 

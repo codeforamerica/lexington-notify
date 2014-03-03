@@ -38,7 +38,7 @@ See the [Getting Started](https://devcenter.heroku.com/articles/quickstart) guid
 ```console
 $ heroku create <app name>
 $ heroku addons:add pgbackups:auto-month # recommended
-$ heroku config:set SECRET_KEY_BASE=`rake secret`
+$ heroku config:set SECRET_KEY_BASE=`bundle exec rake secret`
 $ git push heroku master
 $ heroku run rake db:migrate
 $ heroku open

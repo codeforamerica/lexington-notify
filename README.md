@@ -37,7 +37,6 @@ See the [Getting Started](https://devcenter.heroku.com/articles/quickstart) guid
 
 ```console
 $ heroku create <app name>
-$ heroku labs:enable user-env-compile
 $ heroku addons:add pgbackups:auto-month # recommended
 $ heroku config:set SECRET_KEY_BASE=`rake secret`
 $ git push heroku master

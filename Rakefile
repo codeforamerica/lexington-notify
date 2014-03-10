@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CivicRails::Application.load_tasks
+Notify::Application.load_tasks

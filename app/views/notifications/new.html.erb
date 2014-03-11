@@ -1,0 +1,12 @@
+<% numbers = [] %>
+<form method="post" action="<%= notifications_path %>">
+  <% numbers.each do |number| %>
+    <div><%= check_box_tag(:numbers, number) %> <%= number %></div>
+  <% end %>
+</form>
+
+<form method="post" action="<%= notifications_path %>" style="padding: 1em">
+  <div style="padding: 0.5em">Number: <input type="text" name="number"></div>
+  <div style="padding: 1em">Message: <textarea name="message" cols="40" rows="4"></textarea></div>
+  <input type="submit">
+</form>

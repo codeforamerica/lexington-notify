@@ -37,6 +37,8 @@ gem 'uglifier', '>= 1.3.0'
 # configuration details.
 gem 'unicorn'
 
+gem 'twilio-ruby'
+
 group :production do
   # Heroku developed this gem to configure app logging and serving assets.
   # This is only necessary in production.

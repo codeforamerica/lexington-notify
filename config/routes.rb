@@ -1,3 +1,4 @@
 Notify::Application.routes.draw do
-  root to: 'high_voltage/pages#show', id: 'home'
+  root to: 'notifications#new'
+  resource :notifications
 end

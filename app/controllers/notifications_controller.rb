@@ -5,7 +5,7 @@ class NotificationsController < ActionController::Base
   end
 
   def create
-    @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+    @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
     @client.account.messages.create(
       :from => ENV['SMS_FROM'],
       :to => '+1' + params[:number],

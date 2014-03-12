@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar">
+  	<div class="navbar-inner">
+	    <div class="container">
+        <a class="brand" href="/">
+          Waste Notifications
+        </a>
+    	</div>
+  	</div>
+	</div>
   <div class="container">
     <div><%= flash[:notice] %></div>
     <%= yield %>

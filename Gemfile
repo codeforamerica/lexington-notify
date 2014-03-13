@@ -75,6 +75,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
+
   # Cleanliness is next to... well, just make sure your DB is clean for each test.
   gem 'database_cleaner'
 

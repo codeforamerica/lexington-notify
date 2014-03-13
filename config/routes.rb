@@ -1,4 +1,5 @@
 Notify::Application.routes.draw do
-  root to: 'notifications#new'
+  root to: 'notifications#index'
+
   resource :notifications
 end

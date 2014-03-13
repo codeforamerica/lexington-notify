@@ -1,17 +1,12 @@
-<h1>Let's send a text!</h1>
-<div class="row">
-  <div class="col-md-4">
-    <form method="post" action="<%= notifications_path %>" role="form">
-      <div class="form-group">
-        <label for="number">Number:</label>
-        <input class="form-control" type="text" id="number" name="number" placeholder="1234567890">
-      </div>
+<% numbers = [] %>
+<form method="post" action="<%= notifications_path %>">
+  <% numbers.each do |number| %>
+    <div><%= check_box_tag(:numbers, number) %> <%= number %></div>
+  <% end %>
+</form>
 
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea class="form-control" id="message" name="message" cols="40" rows="4"></textarea>
-      </div>
-      <input class="btn btn-default" type="submit">
-    </form>
-  </div>
-</div>
+<form method="post" action="<%= notifications_path %>" style="padding: 1em">
+  <div style="padding: 0.5em">Number: <input type="text" name="number"></div>
+  <div style="padding: 1em">Message: <textarea name="message" cols="40" rows="4"></textarea></div>
+  <input type="submit">
+</form>

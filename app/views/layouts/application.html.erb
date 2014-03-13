@@ -7,18 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar">
-  	<div class="navbar-inner">
-	    <div class="container">
-        <a class="brand" href="/">
-          Waste Notifications
-        </a>
-    	</div>
-  	</div>
-	</div>
+  <header class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Herbie Alerts</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">About</a></li>
+          <li><%= link_to 'Citizen', new_notifications_path %></li>
+          <li><%= link_to 'Admin', new_notifications_path %></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  <div><%= flash[:notice] %></div>
+  <%= yield %>
+
   <div class="container">
-    <div><%= flash[:notice] %></div>
-    <%= yield %>
+    <footer></footer>
   </div>
 </body>
 </html>

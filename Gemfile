@@ -9,6 +9,10 @@ ruby '2.0.0'
 
 # Official SASS port of Bootstrap - cuz you were gonna use it anyway, right?
 gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'debugger'
+
+# enable foreign keys
+gem 'foreigner'
 
 # Simple static pages - avoid the common pitfall of maintaining a controller
 # with an action for each static page. Just add a file to app/views/pages.
@@ -66,7 +70,8 @@ group :development, :test do
   # To improve dev/prod parity we can define environment variables in a .env file
   # and dotenv-rails will automatically load those variables in development and test
   # environments. This will help avoid conditionals based on the app environment.
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
+  gem 'dotenv', github: 'ecbypi/dotenv', branch: 'overload-environment-variables'
 
   # Factories or fixtures? We don't really care as long as you have tests. But if we had
   # to make a choice - factories win out. And FactoryGirl is a very flexible way to

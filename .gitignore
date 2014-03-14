@@ -21,3 +21,5 @@
 # which can be made public, place them in .env.development
 # or .env.test, accordingly.
 .env
+.env.development
+.env.test

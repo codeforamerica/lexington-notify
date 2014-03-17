@@ -77,6 +77,8 @@ group :development, :test do
   # to make a choice - factories win out. And FactoryGirl is a very flexible way to
   # define and build test objects.
   gem 'factory_girl_rails'
+
+  gem 'faker'
 end
 
 group :test do

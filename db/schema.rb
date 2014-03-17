@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140314203554) do
   end
 
   create_table "users", force: true do |t|
+    t.string "first_name"
+    t.string "last_name"
   end
 
   add_foreign_key "phones", "users", name: "phones_user_id_fk"

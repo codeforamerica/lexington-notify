@@ -11,7 +11,9 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-require 'dotenv' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
+if (Rails.env == 'test' || Rails.env == 'development')
+  require 'dotenv' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
+end
 
 module Notify
   class Application < Rails::Application

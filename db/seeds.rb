@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Phone.delete_all
+Address.delete_all
 User.delete_all
 
 100.times do

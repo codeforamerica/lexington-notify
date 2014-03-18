@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20140317225851) do
   enable_extension "postgis"
 
   create_table "addresses", force: true do |t|
-    t.string "street"
-    t.string "point",  limit: nil
+    t.string  "street"
+    t.string  "point",   limit: nil
+    t.integer "user_id"
   end
 
   create_table "phones", force: true do |t|
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140317225851) do
     t.string "last_name"
     t.string "email"
   end
+
+  add_foreign_key "addresses", "users", name: "addresses_user_id_fk"
 
   add_foreign_key "phones", "users", name: "phones_user_id_fk"
 

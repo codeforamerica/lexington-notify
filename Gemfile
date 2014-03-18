@@ -6,6 +6,7 @@ ruby '2.0.0'
 #####################################
 # Please alphabetize gem dependencies
 #####################################
+gem 'activerecord-postgis-adapter'
 
 # Official SASS port of Bootstrap - cuz you were gonna use it anyway, right?
 gem 'bootstrap-sass', '~> 3.0.3.0'

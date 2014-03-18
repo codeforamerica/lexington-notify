@@ -13,4 +13,5 @@ User.delete_all
   user = User.create!(first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name)
   user.phones.create!(number: Faker::Number.number(10))
+  user.addresses.create!(street: Faker::Address.street_address())
 end

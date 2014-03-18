@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314203554) do
+ActiveRecord::Schema.define(version: 20140317225851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
+
+  create_table "addresses", force: true do |t|
+    t.string "street"
+    t.string "point",  limit: nil
+  end
 
   create_table "phones", force: true do |t|
     t.string  "number"
@@ -24,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140314203554) do
   create_table "users", force: true do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
   end
 
   add_foreign_key "phones", "users", name: "phones_user_id_fk"

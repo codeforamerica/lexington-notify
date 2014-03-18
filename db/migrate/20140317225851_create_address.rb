@@ -1,6 +1,6 @@
 class CreateAddress < ActiveRecord::Migration
   def up
-    execute("CREATE EXTENSION postgis;")
+    # execute("CREATE EXTENSION postgis;")
     create_table :addresses do |t|
       t.string :street
       t.column :point, :point
@@ -11,6 +11,6 @@ class CreateAddress < ActiveRecord::Migration
 
   def down
     drop_table :addresses
-    execute("DROP EXTENSION postgis;")
+    # execute("DROP EXTENSION postgis;")
   end
 end

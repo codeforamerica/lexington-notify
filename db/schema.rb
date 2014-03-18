@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140317225851) do
 
   create_table "addresses", force: true do |t|
     t.string  "street"
-    t.string  "point",   limit: nil
+    t.string  "point"
     t.integer "user_id"
   end
 

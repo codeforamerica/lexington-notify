@@ -19,11 +19,13 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea class="form-control" id="message" name="message" cols="40"
-          rows="4"><%= params[:message] %></textarea>
+        <label for="sms_message">Message:</label>
+        <textarea class="form-control" id="sms_message" name="message" cols="40"
+          rows="4" maxlength="160"><%= params[:message] %></textarea>
+        <div id="sms_feedback"></div>
+
       </div>
-      <button class="btn btn-default"><%= ENV['TWILIO_FROM'] %> env: <%= Rails.env %> Submit</button>
+      <button class="btn btn-default">Submit</button>
     </div>
     </form>
   </div>

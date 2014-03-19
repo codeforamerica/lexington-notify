@@ -15,7 +15,7 @@ $ git clone git@github.com:eeeschwartz/notify.git
 $ cd notify
 $ bundle install
 $ cp .env.test-sample .env.test
-$ vim .env.test # set twilio credentials
+$ vim .env.test # set [TWILIO_SID and TWILIO_AUTH_TOKEN](https://www.twilio.com/user/account/developer-tools/test-credentials)
 $ RAILS_ENV=test rake db:create db:migrate
 $ rspec spec
 $ cp .env.development-sample .env.development

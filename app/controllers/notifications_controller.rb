@@ -5,19 +5,23 @@ class NotificationsController < ActionController::Base
   end
 
   def new
-    @users = User.all.includes(:phones)
+    load_users
   end
 
   def create
-    @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
-    params[:number].each do |number|
-      @client.account.messages.create(
-        :from => ENV['SMS_FROM'],
-        :to => '+1' + number,
-        :body => params[:message]
-      )
+    @notifier = Notifier.new
+
+    if (@notifier.send_smses(params[:number], params[:message]))
+      notice = "message: '#{params[:message]}' sent to #{params[:number].join(',')}"
+      redirect_to new_notifications_path, flash: { notice: notice }
+    else
+      load_users
+      flash[:notice] =  @notifier.error
+      render :new
     end
-    notice = "message: '#{params[:message]}' sent to #{params[:number].join(',')}"
-    redirect_to new_notifications_path, flash: { notice: notice }
+  end
+
+  def load_users
+    @users = User.all.includes(:phones)
   end
 end

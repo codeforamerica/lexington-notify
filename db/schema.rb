@@ -11,31 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317225851) do
+ActiveRecord::Schema.define(version: 20140318232247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "postgis"
-
-  create_table "addresses", force: true do |t|
-    t.string  "street"
-    t.string  "point"
-    t.integer "user_id"
-  end
 
   create_table "phones", force: true do |t|
     t.string  "number"
     t.integer "user_id"
   end
 
+  create_table "sent_notifications", force: true do |t|
+    t.integer "user_id"
+    t.string  "method"
+  end
+
+  create_table "user_addresses", force: true do |t|
+    t.string "street"
+  end
+
   create_table "users", force: true do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "email"
   end
 
-  add_foreign_key "addresses", "users", name: "addresses_user_id_fk"
-
   add_foreign_key "phones", "users", name: "phones_user_id_fk"
+
+  add_foreign_key "sent_notifications", "users", name: "sent_notifications_user_id_fk"
 
 end

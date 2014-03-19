@@ -22,7 +22,7 @@
         <label for="message">Message:</label>
         <textarea class="form-control" id="message" name="message" cols="40" rows="4"></textarea>
       </div>
-      <button class="btn btn-default"><%= ENV['SMS_FROM'] %> env: <%= Rails.env %> Submit</button>
+      <button class="btn btn-default"><%= ENV['TWILIO_FROM'] %> env: <%= Rails.env %> Submit</button>
     </div>
     </form>
   </div>

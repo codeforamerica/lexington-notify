@@ -17,8 +17,8 @@ VCR.config do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   c.configure_rspec_metadata!
-  c.filter_sensitive_data('<ACCOUNT_SID>') { ENV['ACCOUNT_SID'] }
-  c.filter_sensitive_data('<AUTH_TOKEN>') { ENV['AUTH_TOKEN'] }
+  c.filter_sensitive_data('<TWILIO_SID>') { ENV['TWILIO_SID'] }
+  c.filter_sensitive_data('<TWILIO_AUTH_TOKEN>') { ENV['TWILIO_AUTH_TOKEN'] }
 end
 
 RSpec.configure do |config|

@@ -2,7 +2,7 @@ class Notifier
   attr_accessor :error, :twilio_client
 
   def initialize
-    self.twilio_client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
+    self.twilio_client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'])
   end
 
   def send_smses(numbers, message)
@@ -16,7 +16,7 @@ class Notifier
 
   def send_to_twilio(number, message)
     self.twilio_client.account.messages.create(
-      from: ENV['SMS_FROM'],
+      from: ENV['TWILIO_FROM'],
       to: '+1' + number,
       body: message
     )

@@ -14,11 +14,12 @@ Based on the the [civic rails template](https://github.com/invisiblefunnel/civic
 $ git clone git@github.com:eeeschwartz/notify.git
 $ cd notify
 $ bundle install
-$ cp .env.development-sample .env.development
-$ rake db:create db:migrate
 $ cp .env.test-sample .env.test
+$ vim .env.test # set twilio credentials
 $ RAILS_ENV=test rake db:create db:migrate
 $ rspec spec
+$ cp .env.development-sample .env.development
+$ rake db:create db:migrate
 $ rails server
 ```
 

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<ACCOUNT_SID>:<AUTH_TOKEN>@api.twilio.com/2010-04-01/Accounts/<ACCOUNT_SID>/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B17735551234&Body=Hello+from+test+env%21
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.11.5 (true/x86_64-darwin12.5.0 2.0.0-p353)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Wed, 19 Mar 2014 05:01:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '653'
+      Connection:
+      - close
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SMf8641fa4723a40619b24f906a487eb8d", "date_created": null,
+        "date_updated": null, "date_sent": null, "account_sid": "<ACCOUNT_SID>", "to":
+        "+17735551234", "from": "+15005550006", "body": "Hello from test env!", "status":
+        "queued", "num_segments": null, "num_media": "0", "direction": "outbound-api",
+        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/<ACCOUNT_SID>/Messages/SMf8641fa4723a40619b24f906a487eb8d.json",
+        "subresource_uris": {"media": "/2010-04-01/Accounts/<ACCOUNT_SID>/Messages/SMf8641fa4723a40619b24f906a487eb8d/Media.json"}}'
+    http_version: 
+  recorded_at: Wed, 19 Mar 2014 05:01:29 GMT
+recorded_with: VCR 2.8.0

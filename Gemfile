@@ -96,4 +96,6 @@ group :test do
   # Don't reinvent the wheel - learn how shoulda-matchers can save you time and guide
   # you toward the appropriate levels of abstraction in tests
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end

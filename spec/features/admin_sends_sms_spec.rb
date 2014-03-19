@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'admin visits new notification page' do
+describe 'admin visits new notification page', vcr: true do
   it 'errors if problem sending message' do
     number = '7735551234'
     FactoryGirl.create(:phone, user: FactoryGirl.create(:user), number: number)

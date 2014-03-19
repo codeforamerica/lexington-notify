@@ -22,8 +22,13 @@
     </div>
   </header>
 
+  <% if (flash[:notice]) %>
+    <div class="alert alert-warning"><%= flash[:notice] %></div>
+  <% end %>
+  <% if (flash[:error]) %>
+    <div class="alert alert-danger"><%= flash[:error] %></div>
+  <% end %>
 
-  <div><%= flash[:notice] %></div>
   <%= yield %>
 
   <div class="container">

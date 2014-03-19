@@ -4,6 +4,10 @@ class NotificationsController < ActionController::Base
   def index
   end
 
+  def show
+    redirect_to new_notifications_path
+  end
+
   def new
     load_users
   end
@@ -16,7 +20,7 @@ class NotificationsController < ActionController::Base
       redirect_to new_notifications_path, flash: { notice: notice }
     else
       load_users
-      flash[:notice] =  @notifier.error
+      flash[:error] =  @notifier.error
       render :new
     end
   end

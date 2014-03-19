@@ -6,9 +6,13 @@
       <div class="form-group">
         <% @users.each do |user| %>
           <% user.phones.each do |phone| %>
-            <% id = "number_#{phone.number}" %>
-            <%= check_box_tag('number[]', phone.number, nil, id: id) %>
-            <%= label_tag id, phone.number %>
+            <div>
+              <% id = "number_#{phone.number}" %>
+              <%= check_box_tag('number[]', phone.number, nil, id: id) %>
+              <%= label_tag id, phone.number %>
+              <%= user.first_name %>
+              <%= user.last_name %>
+            </div>
           <% end %>
         <% end %>
       </div>

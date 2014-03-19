@@ -19,7 +19,7 @@ $ vim .env.test # set twilio credentials
 $ RAILS_ENV=test rake db:create db:migrate
 $ rspec spec
 $ cp .env.development-sample .env.development
-$ rake db:create db:migrate
+$ rake db:create db:migrate db:seed
 $ rails server
 ```
 

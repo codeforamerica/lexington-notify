@@ -20,7 +20,8 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="message">Message:</label>
-        <textarea class="form-control" id="message" name="message" cols="40" rows="4"></textarea>
+        <textarea class="form-control" id="message" name="message" cols="40"
+          rows="4"><%= params[:message] %></textarea>
       </div>
       <button class="btn btn-default"><%= ENV['TWILIO_FROM'] %> env: <%= Rails.env %> Submit</button>
     </div>

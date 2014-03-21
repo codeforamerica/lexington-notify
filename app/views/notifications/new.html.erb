@@ -4,17 +4,27 @@
     <form method="post" action="<%= notifications_path %>" role="form">
     <div class="col-md-6">
       <div class="form-group">
+        <table class="table table-bordered table-hover" >
+          <tr>
+            <th>Check</th>
+            <th>Phone #</th>
+            <th>First Name</th>
+            <th> Last Name</th>
+            <th>Address</th>
+          </tr>
         <% @users.each do |user| %>
-          <% user.phones.each do |phone| %>
-            <div>
-              <% id = "number_#{phone.number}" %>
-              <%= check_box_tag('number[]', phone.number, nil, id: id) %>
-              <%= label_tag id, phone.number %>
-              <%= user.first_name %>
-              <%= user.last_name %>
-            </div>
-          <% end %>
+          <tr> 
+          <% phone = user.phones.first %>
+          <% address = user.addresses.first %>
+          <% id = "number_#{phone.number}" %>
+          <td><%= check_box_tag('number[]', phone.number, nil, id: id) %></td>
+          <td><%= label_tag id, phone.number %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= address.street %></td>
+          </tr>
         <% end %>
+        </table>
       </div>
     </div>
     <div class="col-md-6">
@@ -25,7 +35,7 @@
         <div id="sms_feedback"></div>
 
       </div>
-      <button class="btn btn-default">Submit</button>
+      <button class="btn btn-primary">Submit</button>
     </div>
     </form>
   </div>

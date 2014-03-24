@@ -14,14 +14,14 @@
           </tr>
         <% @users.each do |user| %>
           <tr> 
-          <% phone = user.phones.first %>
-          <% address = user.addresses.first %>
-          <% id = "number_#{phone.number}" %>
-          <td><%= check_box_tag('number[]', phone.number, nil, id: id) %></td>
-          <td><%= label_tag id, phone.number %></td>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= address.street %></td>
+            <% phone = user.phones.first %>
+            <% address = user.addresses.first %>
+            <% id = "number_#{phone.number}" %>
+            <td><%= check_box_tag('number[]', phone.number, nil, id: id) %></td>
+            <td><%= label_tag id, phone.number %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= address.street %></td>
           </tr>
         <% end %>
         </table>

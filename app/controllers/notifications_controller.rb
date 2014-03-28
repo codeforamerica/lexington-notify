@@ -26,6 +26,6 @@ class NotificationsController < ActionController::Base
   end
 
   def load_users
-    @users = User.all.includes(:phones)
+    @users = User.all.includes(:phones, :addresses)
   end
 end

@@ -1,5 +1,5 @@
 Notify::Application.routes.draw do
-  root to: 'notifications#index'
+  root to: 'citizens#new'
 
   resource :notifications
   resource :citizens

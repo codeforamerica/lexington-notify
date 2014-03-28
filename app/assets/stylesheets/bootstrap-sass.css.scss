@@ -1,10 +1,12 @@
-$body-bg: #FAF9F5;
+$body-bg: #f7f7f7;
 $navbar-height: 60px;
 $navbar-margin-bottom: 0px;
 $navbar-default-bg: #fff;
-$jumbotron-padding: 90px;
+$jumbotron-padding: 80px;
 $jumbotron-color: #fff;
-$jumbotron-bg: #09E5DE;
-$grid-gutter-width: 60px;
+$jumbotron-bg: #3ab58e;
+$border-radius-large: 3px;
+$container-large-desktop: 940px;
+$btn-primary-bg: #E44F33;
 
 @import 'bootstrap';

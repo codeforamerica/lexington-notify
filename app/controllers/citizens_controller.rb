@@ -10,11 +10,11 @@ class CitizensController < ActionController::Base
 
   def create
     params.require(:citizen).permit!
-    if (params[:citizen][:phone][:number] == "9999")
+    citizen = CitizenForm.new(params[:citizen])
+    if (citizen.save)
       redirect_to new_citizens_path, flash: {notice: "Please enter valid phone number"}
     else
-      citizen = CitizenForm.create(params[:citizen])
-      redirect_to new_citizens_path, flash: {notice: "Saved phone number #{citizen.phone}"}
+      redirect_to new_citizens_path, flash: {notice: "Saved phone number #{citizen.phone_number}"}
     end
   end
 end

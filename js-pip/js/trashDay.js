@@ -15,7 +15,7 @@ function onLocationFound(ll) {
 		var pickupDay = quadToDay[quad];
 	};
 
-	document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '<h2>Address outside of service area.</h2>';
+	document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '<h2>Address outside of urban service area.</h2>';
 };
 
 $('#geocode').submit(function(e) {

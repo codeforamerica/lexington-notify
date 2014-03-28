@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <form method="post" action="<%= citizens_path %>" role="form">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label_tag 'phone', 'Phone' %>
+        <input type="text" name="citizen[phone][number]" id="phone">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

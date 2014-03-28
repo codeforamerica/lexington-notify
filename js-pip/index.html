@@ -9,8 +9,6 @@
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
 	<script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
 	<script src='http://code.jquery.com/ui/1.9.2/jquery-ui.js'></script>
-	<!---
-	<script type'text/javascript' src='./plugins/jquery.dstk.js'></script> -->
 	<link rel='stylesheet' href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css'>
 
 	<style>
@@ -34,8 +32,6 @@
 	<script src='./data/solidwastequads.js'></script>
 	<script>
 
-		//var dstk = $.DSTK();
-
 		var quadToDay = {
 			"A": "Monday",
 			"B": "Thursday",
@@ -56,42 +52,6 @@
 
 		onLocationFound(L.latLng(38.060403, -84.508001));
 
-		/* function geocodeAddress() {
-			var address = '#geocode'.val();
-			console.log(address);
-			var url = 'http://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(address) + '&format=json&limit=1&addressdetails=1';
-
-			$.getJSON(url, function(data) {
-				onLocationFound(L.latLng(data[0].lat), L.latLng(data[0].lon));
-			});
-		}; */
-
-		/*$('geocode').submit(function() {
-			console.log('#formValueId'.val());
-			var address = '#formValueId'.val();
-			console.log(address);
-			var url = 'http://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(address) + '&format=json&limit=1&addressdetails=1';
-
-			$.getJSON(url, function(data) {
-
-				onLocationFound(L.latLng(data[0].lat, data[0].lon));
-			});
-		}); */
-
-		/*$('#geocode').submit(function(e) {
-			dstk.street2coordinates( [$('#formValueId').val()], function(result) {
-				console.log(result);
-				if (typeof result['error'] !== 'undefined') {
-					alert('Error: '+result['error']);
-					return
-				}
-				for (var add in result) {
-					var info = result[add];
-					onLocationFound(L.latLng(info['latitude'], info['longitude']));
-				}
-			});
-			e.preventDefault();
-		}); */
 	</script>
 </body>
 </html>

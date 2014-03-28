@@ -18,15 +18,14 @@ function onLocationFound(ll) {
 
 $('#geocode').submit(function(e) {
 	var address = $('#formValueId').val();
-	console.log(address);
-	debugger;
 	var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=json&limit-1&addressdetails=1';
-	console.log(url);
-	debugger;
 	$.getJSON(url, function(data) {
-		console.log(data);
-	});
-	e.preventDefault;
-});
+		var lat = data[0].lat;
+		var lon = data[0].lon;
 
-// onLocationFound(L.latLng(38.060403, -84.508001));
+		document.getElementById('coords').innerHTML = '<h2>Your address is located at [' + lat + ', ' + lon + '].</h2>';
+
+		onLocationFound(L.latLng(lat, lon));
+	});
+	e.preventDefault();
+});

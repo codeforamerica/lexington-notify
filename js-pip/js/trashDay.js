@@ -10,10 +10,12 @@ var quads = L.geoJson(quadsJson);
 
 function onLocationFound(ll) {
 	var layer = leafletPip.pointInLayer(ll, quads);
-	var quad = layer[0].feature.properties.QUAD;
-	var pickupDay = quadToDay[quad];
+	if (layer.length) {
+		var quad = layer[0].feature.properties.QUAD;
+		var pickupDay = quadToDay[quad];
+	};
 
-	document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '';
+	document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '<h2>Address outside of service area.</h2>';
 };
 
 $('#geocode').submit(function(e) {

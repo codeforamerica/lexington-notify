@@ -2,34 +2,36 @@ class PhoneNumber
   include Virtus.model
 
   attribute :number, String
+
+  def valid?
+    number.present? && number =~ /^\d{3}-?\d{3}-?\d{4}$/
+  end
 end
 
 class CitizenForm
   include Virtus.model
+
   attribute :phone, PhoneNumber
 
-  def initialize(params)
-    @phoney = params[:phone]
-    super
-  end
-
   def valid?
-    phone_number == "9999"
+    phone.valid?
   end
 
   def save
-    @user = User.create
-    @user.phones.create @phoney
     return false unless valid?
-    puts phone
-    true
+    @user = User.create
+    @user.phones.create phone.attributes
   end
 
   def phone_number
-    @user.phone
+    @user ? user_phone : submitted_phone
   end
 
-  def self.create(params)
-    new(params)
+  def submitted_phone
+    phone ? phone.number : ''
+  end
+
+  def user_phone
+    @user.phone
   end
 end

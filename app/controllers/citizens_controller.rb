@@ -6,15 +6,18 @@ class CitizensController < ActionController::Base
   end
 
   def new
+    @citizen = CitizenForm.new
   end
 
   def create
     params.require(:citizen).permit!
-    citizen = CitizenForm.new(params[:citizen])
-    if (citizen.save)
-      redirect_to new_citizens_path, flash: {notice: "Please enter valid phone number"}
+    @citizen = CitizenForm.new(params[:citizen])
+    if (@citizen.save)
+      redirect_to new_citizens_path, flash: {
+        notice: "Saved phone number #{@citizen.phone_number}"}
     else
-      redirect_to new_citizens_path, flash: {notice: "Saved phone number #{citizen.phone_number}"}
+      flash.now[:error] = "Please enter valid phone number"
+      render :new
     end
   end
 end

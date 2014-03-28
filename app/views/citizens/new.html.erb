@@ -4,7 +4,8 @@
     <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'phone', 'Phone' %>
-        <input type="text" name="citizen[phone][number]" id="phone">
+        <input type="text" name="citizen[phone][number]" id="phone"
+          value="<%= @citizen.phone_number %>">
         <button class="btn btn-primary">Submit</button>
       </div>
     </div>

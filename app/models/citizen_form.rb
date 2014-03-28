@@ -1,4 +1,4 @@
-class PhoneNumber
+class PhoneNumberInput
   include Virtus.model
 
   attribute :number, String
@@ -8,10 +8,17 @@ class PhoneNumber
   end
 end
 
+class AddressInput
+  include Virtus.model
+
+  attribute :street, String
+end
+
 class CitizenForm
   include Virtus.model
 
-  attribute :phone, PhoneNumber
+  attribute :phone, PhoneNumberInput
+  attribute :address, AddressInput
 
   def valid?
     phone.valid?
@@ -21,10 +28,15 @@ class CitizenForm
     return false unless valid?
     @user = User.create
     @user.phones.create phone.attributes
+    @user.addresses.create address.attributes
   end
 
   def phone_number
     @user ? user_phone : submitted_phone
+  end
+
+  def submitted_street
+    address ? address.street : ''
   end
 
   def submitted_phone

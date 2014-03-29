@@ -31,6 +31,6 @@ class Notifier
 
   def send_sms(number, message)
     send_to_twilio(number, message)
-    SentNotification.create!(mobile_number: number, message: message)
+    puts SentNotification.create!(mobile_number: number, message: message).attributes
   end
 end

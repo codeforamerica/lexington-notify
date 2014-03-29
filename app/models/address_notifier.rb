@@ -5,7 +5,7 @@ class AddressNotifier
   end
 
   def self.notify_tomorrows_addresses
-    self.notify_addresses()
+    self.notify_addresses(self.tomorrows_addresses)
   end
 
   def self.msg!(key)
@@ -13,6 +13,7 @@ class AddressNotifier
   end
 
   def self.notify_addresses(addresses)
-    Notifier.new.send_smses(addresses.map{ |a| a.mobile_number }, msg!(:pickup_is_tomorrow))
+    numbers = addresses.map{ |a| a.mobile_number }
+    Notifier.new.send_smses(numbers, msg!(:pickup_is_tomorrow))
   end
 end

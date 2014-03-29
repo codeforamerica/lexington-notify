@@ -17,6 +17,7 @@ end
 class CitizenForm
   include Virtus.model
 
+  attribute :email, String
   attribute :phone, PhoneNumberInput
   attribute :address, AddressInput
 
@@ -26,7 +27,7 @@ class CitizenForm
 
   def save
     return false unless valid?
-    @user = User.create
+    @user = User.create email: email
     @user.phones.create phone.attributes
     @user.addresses.create address.attributes
   end

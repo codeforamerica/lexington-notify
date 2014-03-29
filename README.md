@@ -10,15 +10,27 @@ This is an example of a simple application that
 
 Based on the the [civic rails template](https://github.com/invisiblefunnel/civic-rails), optimized for heroku.
 
+Make sure postgres is installed and running (osx instructions
+
 ```console
 $ git clone git@github.com:eeeschwartz/notify.git
 $ cd notify
 $ bundle install
 $ cp .env.test-sample .env.test
-$ vim .env.test # set [TWILIO_SID and TWILIO_AUTH_TOKEN](https://www.twilio.com/user/account/developer-tools/test-credentials)
+```
+
+grab your [twilio credentials](https://www.twilio.com/user/account/developer-tools/test-credentials) and set TWILIO_SID and TWILIO_AUTH_TOKEN in .env.test
+
+```console
+$ vim .env.test # or use your favorite editor
 $ RAILS_ENV=test rake db:create db:migrate
 $ rspec spec
 $ cp .env.development-sample .env.development
+```
+
+Set your twilio credentials in .env.development
+
+```console
 $ rake db:create db:migrate db:seed
 $ rails server
 ```

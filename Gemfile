@@ -43,6 +43,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 gem 'twilio-ruby'
+gem 'virtus'
 
 group :production do
   # Heroku developed this gem to configure app logging and serving assets.

@@ -1,0 +1,41 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Receive weekly text message reminders for Herbie pickup</h1>
+    <p>
+      We're testing out SMS text alerts for regularly scheduled waste collection.
+    </p>
+    <form method="post" action="<%= citizens_path %>" role="form" class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="address">Street Address</label>
+        <input type="text" class="form-control input-lg" id="address"
+          name="citizen[address][street]"
+          value="<%= @citizen.submitted_street %>"
+          placeholder="Street address">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="phone">Mobile Number</label>
+        <input type="text" class="form-control input-lg" id="phone"
+          name="citizen[phone][number]"
+          value="<%= @citizen.submitted_phone %>"
+          placeholder="Mobile phone">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="email">Email Address</label>
+        <input type="email" class="form-control input-lg" id="email"
+          name="citizen[email]"
+          value="<%= @citizen.email %>"
+          placeholder="Email address">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <footer>
+      <p class="pull-right"><a href="https://github.com/eeeschwartz/notify" target="_blank">Code on Github</a></p>
+      <p><a href="http://teambiglex.tumblr.com/" target="_blank">2014 Code for America: Team Lexington</a></p>
+    </footer>
+  </div>
+</div>

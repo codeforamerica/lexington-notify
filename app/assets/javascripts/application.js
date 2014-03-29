@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require textarea_countdown
 //= require bootstrap
+//= require leaflet
 //= require_tree .

@@ -4,12 +4,15 @@ class AddressNotifier
     Address.where(pickup: (now + 1.day).strftime('%A'))
   end
 
-  # def self.notify_tomorrows_addresses
-  #   self.notify_addresses('')
-  # end
+  def self.notify_tomorrows_addresses
+    self.notify_addresses()
+  end
 
-  # def self.notify_addresses(addresses)
-  #   notifier = Notifier.new
-  #   notifier.send_sms('7738600689', 'foo')
-  # end
+  def self.msg!(key)
+    I18n.t!(key, scope: :pickup_msgs)
+  end
+
+  def self.notify_addresses(addresses)
+    Notifier.new.send_smses(addresses.map{ |a| a.mobile_number }, msg!(:pickup_is_tomorrow))
+  end
 end

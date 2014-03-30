@@ -4,7 +4,8 @@
     <p>
       We're testing out SMS text alerts for regularly scheduled waste collection.
     </p>
-    <form method="post" action="<%= citizens_path %>" role="form" class="form-inline">
+    <form method="post" action="<%= citizens_path %>" role="form" class="form-inline"
+      id="citizenForm">
       <div class="form-group">
         <label class="sr-only" for="address">Street Address</label>
         <input type="text" class="form-control input-lg" id="address"
@@ -26,11 +27,18 @@
           value="<%= @citizen.email %>"
           placeholder="Email address">
       </div>
+      <!-- <div class="form-group"> -->
+      <!--   <input class="form-control input-lg" id="pickupDay" -->
+      <!--     placeholder="pickup day" -->
+      <!--     name="citizen[address][pickup_day]"> -->
+      <!-- </div> -->
+      <div id="day"></div>
+      <div id="coords"></div>
+      <button class="btn btn-primary btn-lg" id="geocode">Lookup Trash Day</button>
       <button type="submit" class="btn btn-primary btn-lg">Submit</button>
     </form>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <footer>

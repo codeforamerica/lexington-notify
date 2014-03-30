@@ -16,11 +16,13 @@ $(function() {
       var pickupDay = quadToDay[quad];
     };
 
+    // $('input#pickupDay').val(pickupDay);
     document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '<h2>Address outside of urban service area.</h2>';
   };
 
-  $('#geocode').submit(function(e) {
-    var address = $('#formValueId').val();
+  $('#geocode').click(function(e) {
+    var address = $('#address').val();
+    address += ' Lexington, KY'
     var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=json&limit-1&addressdetails=1';
     $.getJSON(url, function(data) {
       var lat = data[0].lat;

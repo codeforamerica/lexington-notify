@@ -6,7 +6,7 @@ class CitizensController < ActionController::Base
   end
 
   def new
-    @citizen = CitizenForm.new
+    @citizen = CitizenForm.new({address: {street: '332 Blackburn Ave'}})
   end
 
   def create

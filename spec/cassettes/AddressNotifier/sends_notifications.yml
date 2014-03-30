@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<TWILIO_SID>:<TWILIO_AUTH_TOKEN>@api.twilio.com/2010-04-01/Accounts/<TWILIO_SID>/Messages.json
     body:
       encoding: US-ASCII
-      string: From=%2B15005550006&To=%2B17735551234&Body=Hello+from+test+env%21
+      string: From=%2B15005550006&To=%2B13125551212&Body=Your+pickup+is+tomorrow%21
     headers:
       Accept:
       - application/json
@@ -23,11 +23,11 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Sat, 29 Mar 2014 19:16:29 GMT
+      - Sat, 29 Mar 2014 19:16:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '653'
+      - '657'
       Connection:
       - close
       X-Powered-By:
@@ -36,12 +36,12 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: '{"sid": "SM3ab20639025741e4b88231790cdeb269", "date_created": null,
+      string: '{"sid": "SMfb38aea4654d41cd99fc8e2c36a4261b", "date_created": null,
         "date_updated": null, "date_sent": null, "account_sid": "<TWILIO_SID>", "to":
-        "+17735551234", "from": "+15005550006", "body": "Hello from test env!", "status":
-        "queued", "num_segments": null, "num_media": "0", "direction": "outbound-api",
-        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/<TWILIO_SID>/Messages/SM3ab20639025741e4b88231790cdeb269.json",
-        "subresource_uris": {"media": "/2010-04-01/Accounts/<TWILIO_SID>/Messages/SM3ab20639025741e4b88231790cdeb269/Media.json"}}'
+        "+13125551212", "from": "+15005550006", "body": "Your pickup is tomorrow!",
+        "status": "queued", "num_segments": null, "num_media": "0", "direction": "outbound-api",
+        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/<TWILIO_SID>/Messages/SMfb38aea4654d41cd99fc8e2c36a4261b.json",
+        "subresource_uris": {"media": "/2010-04-01/Accounts/<TWILIO_SID>/Messages/SMfb38aea4654d41cd99fc8e2c36a4261b/Media.json"}}'
     http_version: 
-  recorded_at: Sat, 29 Mar 2014 19:16:29 GMT
+  recorded_at: Sat, 29 Mar 2014 19:16:30 GMT
 recorded_with: VCR 2.8.0

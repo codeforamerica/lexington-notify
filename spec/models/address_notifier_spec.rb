@@ -7,10 +7,10 @@ describe AddressNotifier, vcr: true do
   end
 
   it 'fetches tomorrows addresses' do
-    wednesday_addr = FactoryGirl.create(:address, pickup: Address::PICKUP[:wednesday])
-    thursday_addr = FactoryGirl.create(:address, pickup: Address::PICKUP[:thursday])
-    random_wednesday = Time.zone.local(2014)
-    expect(AddressNotifier.tomorrows_addresses(random_wednesday)).to eq([thursday_addr])
+    thursday_addr = FactoryGirl.create(:address, pickup: Address::PICKUP.fetch(:thursday))
+    friday_addr = FactoryGirl.create(:address, pickup: Address::PICKUP.fetch(:friday))
+    random_thursday = Time.zone.local(2015)
+    expect(AddressNotifier.tomorrows_addresses(random_thursday)).to eq([friday_addr])
   end
 
   it 'fetches localized message' do

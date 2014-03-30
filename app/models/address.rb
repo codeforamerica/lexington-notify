@@ -1,7 +1,11 @@
 class Address < ActiveRecord::Base
   belongs_to :user
+
   PICKUP = {
-    wednesday: 'Wednesday',
-    thursday: 'Thursday'
+    monday: 'Monday',
+    tuesday: 'Tuesday',
+    thursday: 'Thursday',
+    friday: 'Friday',
+    daily: 'Daily'
   }
 end

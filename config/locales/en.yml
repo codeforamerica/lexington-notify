@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  pickup_msgs:
+    pickup_is_tomorrow: "Your pickup is tomorrow!"

@@ -27,6 +27,9 @@
           value="<%= @citizen.email %>"
           placeholder="Email address">
       </div>
+      <input id="pickup" name="citizen[address][pickup]">
+      <input id="lat" name="citizen[address][lat]">
+      <input id="lon" name="citizen[address][lon]">
       <div id="day"></div>
       <div id="coords"></div>
       <button class="btn btn-primary btn-lg" id="geocode">Lookup Trash Day</button>

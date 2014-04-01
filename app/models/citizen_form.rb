@@ -3,6 +3,9 @@ class AddressInput
 
   attribute :street, String
   attribute :mobile_number, String
+  attribute :pickup, String
+  attribute :lat, Float
+  attribute :lon, Float
 
   def valid?
     mobile_number.present? && mobile_number =~ /^\d{3}-?\d{3}-?\d{4}$/
@@ -40,5 +43,4 @@ class CitizenForm
   def submitted_phone
     address ? address.mobile_number : ''
   end
-
 end

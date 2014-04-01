@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :phones
   has_many :addresses
 
   def phone
-    phones.last.number
+    addresses.last.mobile_number
   end
 end

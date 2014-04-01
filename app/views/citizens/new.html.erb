@@ -14,10 +14,10 @@
           placeholder="Street address">
       </div>
       <div class="form-group">
-        <label class="sr-only" for="phone">Mobile Number</label>
-        <input type="text" class="form-control input-lg" id="phone"
-          name="citizen[phone][number]"
-          value="<%= @citizen.submitted_phone %>"
+        <label class="sr-only" for="address_phone">Address Number</label>
+        <input type="text" class="form-control input-lg" id="address_phone"
+          name="citizen[address][mobile_number]"
+          value="<%= @citizen.phone_number %>"
           placeholder="Mobile phone">
       </div>
       <div class="form-group">
@@ -27,11 +27,6 @@
           value="<%= @citizen.email %>"
           placeholder="Email address">
       </div>
-      <!-- <div class="form-group"> -->
-      <!--   <input class="form-control input-lg" id="pickupDay" -->
-      <!--     placeholder="pickup day" -->
-      <!--     name="citizen[address][pickup_day]"> -->
-      <!-- </div> -->
       <div id="day"></div>
       <div id="coords"></div>
       <button class="btn btn-primary btn-lg" id="geocode">Lookup Trash Day</button>

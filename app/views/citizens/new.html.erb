@@ -14,11 +14,14 @@
           placeholder="Street address" required>
       </div>
       <div class="form-group">
-        <label class="sr-only" for="address_phone">Address Number</label>
-        <input type="text" class="form-control input-lg" id="address_phone"
-          name="citizen[address][mobile_number]"
-          value="<%= @citizen.phone_number %>"
-          placeholder="Mobile phone" required>
+        <label class="sr-only" for="address_phone">Mobile Number</label>
+          <div class="input-append">
+            <input type="text" class="form-control input-lg" id="address_phone"
+              name="citizen[address][mobile_number]"
+              value="<%= @citizen.phone_number %>"
+              placeholder="Mobile phone" required>
+            <!-- <span class="add-on">Lexington, KY</span> -->
+          </div>
       </div>
       <div class="form-group">
         <label class="sr-only" for="email">Email Address</label>

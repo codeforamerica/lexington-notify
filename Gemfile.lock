@@ -105,6 +105,7 @@ GEM
     jwt (0.1.11)
       multi_json (>= 1.5)
     kgio (2.8.1)
+    leaflet-rails (0.7.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -234,6 +235,7 @@ DEPENDENCIES
   foreman
   high_voltage (~> 2.1)
   jquery-rails
+  leaflet-rails
   pg
   quiet_assets
   rails (= 4.0.3)

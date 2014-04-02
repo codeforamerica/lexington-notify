@@ -22,6 +22,8 @@ gem 'high_voltage', '~> 2.1'
 # Everybody's doing it...
 gem 'jquery-rails'
 
+gem 'leaflet-rails'
+
 # Heroku prefers PostgreSQL and so do we! One of the 12 factors is dev/prod parity.
 # By running PG locally we can be more confident that the database interactions
 # developed locally will run appropriately in production.

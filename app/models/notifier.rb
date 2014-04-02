@@ -31,6 +31,7 @@ class Notifier
 
   def send_sms(number, message)
     send_to_twilio(number, message)
-    SentNotification.create!(mobile_number: number, message: message)
+    sent = SentNotification.create!(mobile_number: number, message: message)
+    Rails.logger.info sent.attributes
   end
 end

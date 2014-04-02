@@ -11,22 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329190434) do
+ActiveRecord::Schema.define(version: 20140401204511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: true do |t|
     t.string  "street"
-    t.string  "point",         limit: nil
     t.integer "user_id"
     t.string  "pickup"
     t.string  "mobile_number"
-  end
-
-  create_table "phones", force: true do |t|
-    t.string  "number"
-    t.integer "user_id"
+    t.float   "lat"
+    t.float   "lon"
   end
 
   create_table "sent_notifications", force: true do |t|
@@ -41,7 +37,5 @@ ActiveRecord::Schema.define(version: 20140329190434) do
   end
 
   add_foreign_key "addresses", "users", name: "addresses_user_id_fk"
-
-  add_foreign_key "phones", "users", name: "phones_user_id_fk"
 
 end

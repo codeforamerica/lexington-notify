@@ -20,17 +20,24 @@
     </div>
   </header>
 
-  <% if (flash[:notice]) %>
-    <div class="alert alert-warning"><%= flash[:notice] %></div>
-  <% end %>
-  <% if (flash[:error]) %>
-    <div class="alert alert-danger"><%= flash[:error] %></div>
-  <% end %>
+  <div class="js-message-zone">
+    <% if (flash[:notice]) %>
+      <div class="alert alert-warning"><%= flash[:notice] %></div>
+    <% end %>
+    <% if (flash[:error]) %>
+      <div class="alert alert-danger"><%= flash[:error] %></div>
+    <% end %>
+  </div>
 
   <%= yield %>
 
   <div class="container">
-    <footer></footer>
+    <div class="row">
+      <footer>
+        <p class="pull-right"><a href="https://github.com/eeeschwartz/notify" target="_blank">Code on Github</a></p>
+        <p><a href="http://teambiglex.tumblr.com/" target="_blank">2014 Code for America: Team Lexington</a></p>
+      </footer>
+    </div>
   </div>
 </body>
 </html>

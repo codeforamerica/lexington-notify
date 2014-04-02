@@ -1,8 +1,9 @@
 class Notifier
-  attr_accessor :error, :twilio_client
+  attr_accessor :error, :twilio_messanger
 
   def initialize
-    self.twilio_client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'])
+    twilio_client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN'])
+    self.twilio_messanger = twilio_client.account.messages
   end
 
   def valid?(numbers, message)
@@ -22,11 +23,15 @@ class Notifier
   end
 
   def send_to_twilio(number, message)
-    self.twilio_client.account.messages.create(
-      from: ENV['TWILIO_FROM'],
-      to: '+1' + number,
-      body: message
-    )
+    begin
+      self.twilio_messanger.create(
+        from: ENV['TWILIO_FROM'],
+        to: '+1' + number,
+        body: message
+      )
+    rescue StandardError => boom
+      puts "could not send #{message} to #{number}. Error " + boom.message
+    end
   end
 
   def send_sms(number, message)

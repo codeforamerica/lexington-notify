@@ -11,7 +11,7 @@ describe 'citizen visits signup page' do
     user = User.last
     expect(user.email).to eq('a@b.cc')
     expect(user.addresses.last.street).to eq(street)
-    expect(user.addresses.last.mobile_number).to eq('123-123-1234')
+    expect(user.addresses.last.mobile_number).to eq('1231231234')
   end
 
   it 'errors on invalid phone' do

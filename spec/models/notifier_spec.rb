@@ -13,4 +13,10 @@ describe Notifier do
     expect(notifier.valid?(['123'], message)).to be_true
     expect(notifier.valid?(['123'], message + 'a')).to be_false
   end
+
+  it 'handles twilio exception' do
+    notifier = Notifier.new
+    notifier.twilio_messanger.stub(:create) { throw :cant_send }
+    notifier.send_to_twilio('123', 'message')
+  end
 end

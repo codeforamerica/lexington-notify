@@ -7,8 +7,12 @@ class AddressInput
   attribute :lat, Float
   attribute :lon, Float
 
+  def transform
+    @mobile_number = mobile_number.gsub(/\D/, '') if (mobile_number.present?)
+  end
+
   def valid?
-    mobile_number.present? && mobile_number =~ /^\d{3}-?\d{3}-?\d{4}$/
+    mobile_number && mobile_number =~ /^\d{10}$/
   end
 end
 
@@ -23,6 +27,7 @@ class CitizenForm
   end
 
   def valid?
+    address.transform
     address.valid?
   end
 

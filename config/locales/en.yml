@@ -22,4 +22,4 @@
 en:
   hello: "Hello world"
   pickup_msgs:
-    pickup_is_tomorrow: "Your pickup is tomorrow!"
+    pickup_is_tomorrow: "Your trash pickup is tomorrow! (Reply STOP to unsubscribe)"

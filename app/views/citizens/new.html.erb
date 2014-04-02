@@ -11,29 +11,28 @@
         <input type="text" class="form-control input-lg" id="address"
           name="citizen[address][street]"
           value="<%= @citizen.submitted_street %>"
-          placeholder="Street address">
+          placeholder="Street address" required>
       </div>
       <div class="form-group">
         <label class="sr-only" for="address_phone">Address Number</label>
         <input type="text" class="form-control input-lg" id="address_phone"
           name="citizen[address][mobile_number]"
           value="<%= @citizen.phone_number %>"
-          placeholder="Mobile phone">
+          placeholder="Mobile phone" required>
       </div>
       <div class="form-group">
         <label class="sr-only" for="email">Email Address</label>
         <input type="email" class="form-control input-lg" id="email"
           name="citizen[email]"
           value="<%= @citizen.email %>"
-          placeholder="Email address">
+          placeholder="Email address" required>
       </div>
-      <input id="pickup" name="citizen[address][pickup]">
-      <input id="lat" name="citizen[address][lat]">
-      <input id="lon" name="citizen[address][lon]">
+      <input type="hidden" id="pickup" name="citizen[address][pickup]">
+      <input type="hidden" id="lat" name="citizen[address][lat]">
+      <input type="hidden" id="lon" name="citizen[address][lon]">
       <div id="day"></div>
       <div id="coords"></div>
-      <button class="btn btn-primary btn-lg" id="geocode">Lookup Trash Day</button>
-      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      <button class="btn btn-primary btn-lg" id="">Submit</button>
     </form>
   </div>
 </div>

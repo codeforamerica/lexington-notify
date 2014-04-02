@@ -28,4 +28,10 @@ describe CitizenForm do
     form = CitizenForm.new(:address => {mobile_number: '123-456-7890'})
     expect(form).to be_valid
   end
+
+  it 'removes non-numeric characters from phone number' do
+    form = CitizenForm.new(:address => {mobile_number: '123-456-7890'})
+    form.valid?
+    expect(form.phone_number).to eq('1234567890')
+  end
 end

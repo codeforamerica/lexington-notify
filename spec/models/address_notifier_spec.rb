@@ -13,6 +13,15 @@ describe AddressNotifier, vcr: true do
     expect(AddressNotifier.tomorrows_addresses(random_thursday)).to eq([friday_addr])
   end
 
+  it 'only fetches unique phones' do
+    original = FactoryGirl.create(:address, mobile_number: '123',
+      pickup: Address::PICKUP.fetch(:friday))
+    dupe = FactoryGirl.create(:address, mobile_number: '123',
+      pickup: Address::PICKUP.fetch(:friday))
+    random_thursday = Time.zone.local(2015)
+    expect(AddressNotifier.tomorrows_addresses(random_thursday)).to eq([original])
+  end
+
   it 'fetches localized message' do
     expect(AddressNotifier.msg!(:pickup_is_tomorrow)).to match(/tomorrow/)
   end

@@ -1,7 +1,9 @@
 class AddressNotifier
 
   def self.tomorrows_addresses(now=Time.zone.now)
-    Address.where(pickup: (now + 1.day).strftime('%A'))
+    Address.where(pickup: (now + 1.day).strftime('%A')).to_a.uniq do |a|
+      a.mobile_number
+    end
   end
 
   def self.notify_tomorrows_addresses

@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Your pickup is <%= @citizen.pickup %>
+    <% unless(@citizen.daily_pickup?) %>
+      <h3>We will send a reminder the night before!</h3>
+    <% end %>
+  </div>
+</div>

@@ -18,6 +18,10 @@ class CitizenForm
   attribute :email, String
   attribute :address, AddressInput
 
+  def id
+    @user ? @user.id : nil
+  end
+
   def valid?
     address.valid?
   end

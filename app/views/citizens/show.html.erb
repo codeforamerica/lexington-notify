@@ -1,8 +1,15 @@
 <div class="jumbotron">
   <div class="container">
-    <h1>Your pickup is <%= @citizen.pickup %>
-    <% unless(@citizen.daily_pickup?) %>
-      <h3>We will send a reminder the night before!</h3>
-    <% end %>
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Your regularly scheduled trash pickup is <%= @citizen.pickup %></h1>
+        <% unless(@citizen.daily_pickup?) %>
+        <h3>We will send you a text message reminder the night before!</h3>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag "TrashTruckIcon.png", class: "img-responsive" %>
+      </div>
+    </div>
   </div>
 </div>

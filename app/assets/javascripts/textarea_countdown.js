@@ -1,3 +1,5 @@
+// by erik <3
+
 function countdown(message, feedback) {
   var textMax = message.prop('maxlength');
   var setFeedback = function(charsRemaining) {

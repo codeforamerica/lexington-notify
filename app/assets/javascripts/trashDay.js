@@ -9,34 +9,43 @@ $(function() {
 
   var quads = L.geoJson(quadsJson);
 
-  function onLocationFound(ll) {
+  function displayError(message) {
+    $('.js-message-zone').html('<div class="alert alert-danger">' + message + '</div>');
+  }
+
+  function onLocationFound(osmResult, success) {
+    var lat = osmResult.lat;
+    var lon = osmResult.lon;
+    var ll = L.latLng(lat, lon);
     var layer = leafletPip.pointInLayer(ll, quads);
     if (layer.length) {
       var quad = layer[0].feature.properties.QUAD;
       var pickupDay = quadToDay[quad];
-    };
+      $('input#pickup').val(pickupDay);
+      $('#lat').val(lat);
+      $('#lon').val(lon);
+      success();
+    } else {
+      displayError("According to our records, this address does not receive city waste pickup. If this is an error, please call Chad Cottle on his cell phone, directly, any time, day or night!");
+    }
+  };
 
-    $('input#pickup').val(pickupDay);
-    // document.getElementById('day').innerHTML = layer.length ? '<h2>Your trash gets picked up on ' + pickupDay + '</h2>' : '<h2>Address outside of urban service area.</h2>';
+  function geocode(address, success) {
+    address += ' Lexington, KY';
+    var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=json&limit-1&addressdetails=1';
+    $.getJSON(url, function(data) {
+      if(data.length > 0) {
+        onLocationFound(data[0], success);
+      } else {
+        displayError("Address not found.")
+      }
+    });
   };
 
   $('#citizenForm').submit(function(e) {
     e.preventDefault();
-
-    var address = $('#address').val();
-    address += ' Lexington, KY'
-    var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=json&limit-1&addressdetails=1';
     var _this = this;
-    $.getJSON(url, function(data) {
-      var lat = data[0].lat;
-      var lon = data[0].lon;
-
-      $('#lat').val(lat);
-      $('#lon').val(lon);
-
-      // document.getElementById('coords').innerHTML = '<h2>Your address is located at [' + lat + ', ' + lon + '].</h2>';
-
-      onLocationFound(L.latLng(lat, lon));
+    geocode($('#address').val(), function() {
       _this.submit();
     });
   });

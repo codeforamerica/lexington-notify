@@ -32,9 +32,6 @@ $(function() {
 
   function geocode(address, success) {
     address += ' Lexington, KY';
-    console.log(address);
-    var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=jsonp&limit-1&addressdetails=1';
-    console.log(url);
     $.ajax({
       url: 'http://nominatim.openstreetmap.org/search',
       type: 'GET',

@@ -32,12 +32,24 @@ $(function() {
 
   function geocode(address, success) {
     address += ' Lexington, KY';
-    var url = 'http://nominatim.openstreetmap.org/search?q='+ encodeURIComponent(address) +'&format=json&limit-1&addressdetails=1';
-    $.getJSON(url, function(data) {
-      if(data.length > 0) {
-        onLocationFound(data[0], success);
-      } else {
-        displayError("Address not found.")
+    $.ajax({
+      url: 'http://nominatim.openstreetmap.org/search',
+      type: 'GET',
+      dataType: 'jsonp',
+      jsonp: false,
+      jsonpCallback: 'json_callback',
+      data: {
+        format: 'json',
+        q: address,
+        limit: 1,
+        json_callback: 'json_callback'
+      },
+      success: function(data) {
+        if(data.length > 0) {
+          onLocationFound(data[0], success);
+        } else {
+          displayError("Address not found.")
+        }
       }
     });
   };

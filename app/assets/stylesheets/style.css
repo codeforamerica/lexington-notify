@@ -2,8 +2,10 @@
   line-height: 0;
 }
 
-.jumbotron form {
-  margin-top: 30px;
+.jumbotron form label {
+  padding-top: 10px;
+  padding-bottom: 8px;
+  font-size: 16px;
 }
 
 .input-group-addon {

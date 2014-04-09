@@ -5,22 +5,11 @@
     <form method="post" action="<%= notifications_path %>" role="form">
     <div class="col-md-6">
       <div class="form-group">
-        <table class="table table-bordered table-hover" >
+        <table class="table table-bordered table-hover js-addresses" >
           <tr>
-            <th>Check</th>
             <th>Phone #</th>
-            <th>First Name</th>
-            <th> Last Name</th>
             <th>Address</th>
           </tr>
-        <% @users.each do |user| %>
-          <tr>
-          <% address = user.addresses.first %>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= address ? address.street : '' %></td>
-          </tr>
-        <% end %>
         </table>
       </div>
     </div>

@@ -23,8 +23,19 @@ $(function() {
   });
 
   function onEachFeature(feature, layer) {
-    var popupContent = "<strong>Quad:</strong> " + feature.properties.QUAD + "<br><strong>Pickup Day:</strong> " + quadToDay[feature.properties.QUAD];
+    var pickupDay = quadToDay[feature.properties.QUAD];
+    var popupContent = "<strong>Quad:</strong> " + feature.properties.QUAD + "<br><strong>Pickup Day:</strong> " + pickupDay;
     layer.bindPopup(popupContent);
+
+    layer.on('click', function(e) {
+      pickup = quadToDay[e.target.feature.properties.QUAD];
+      console.log(pickup);
+      $.getJSON('/addresses.json?pickup=' + pickup, function(data) {
+      data.forEach(function(address) {
+        $('.js-addresses tr:last').after('<tr><td>'+ address.street + '</td><td>' + address.pickup + '</tr>' );
+        });
+      });
+    });
   };
 
   function style(feature) {

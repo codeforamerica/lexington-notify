@@ -1,6 +1,15 @@
 class CitizensController < ActionController::Base
   layout 'application'
 
+  def index
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json {
+        render json: User.all
+      }
+    end
+  end
+
   def show
     @citizen = User.find(params[:id])
   end

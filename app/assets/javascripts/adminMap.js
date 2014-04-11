@@ -1,11 +1,11 @@
 $(function() {
 
   var quadToDay = {
-      "A": "Monday",
-      "B": "Thursday",
-      "C": "Tuesday",
-      "D": "Friday",
-      "E": "Daily"
+    "A": "Monday",
+    "B": "Thursday",
+    "C": "Tuesday",
+    "D": "Friday",
+    "E": "Daily"
   };
 
   var colors = {

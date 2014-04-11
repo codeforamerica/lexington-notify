@@ -3,5 +3,6 @@ Notify::Application.routes.draw do
 
   resource :notifications
   resources :citizens
+  resources :addresses
   resource :pip
 end

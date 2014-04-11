@@ -19,7 +19,7 @@ class Notifier
   def send_smses(numbers, message)
     return false unless (valid?(numbers, message))
 
-    numbers.each { |number| send_sms(number, message) }
+    numbers.uniq.each { |number| send_sms(number, message) }
   end
 
   def send_to_twilio(number, message)

@@ -11,3 +11,7 @@
 .input-group-addon {
   color: gray;
 }
+
+#map {
+  height: 400px;
+}

@@ -7,6 +7,14 @@ describe Notifier do
     }.to change{SentNotification.count}.by(2)
   end
 
+  it 'de-dups numbers when sending smses' do
+    notifier = Notifier.new
+    notifier.stub(:send_to_twilio)
+    expect {
+      notifier.send_smses(['5554441111', '5554441111'], 'Hello!')
+    }.to change{SentNotification.count}.by(1)
+  end
+
   it 'errors if message is greater than specified chars length' do
     notifier = Notifier.new
     message = (1..160).map { 'a' }.join('')

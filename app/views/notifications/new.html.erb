@@ -1,15 +1,18 @@
 <div class="container">
   <div id="map"></div>
-  <h1>Let's send a text!</h1>
+  <h1 class="js-pickup"></h1>
   <div class="row">
-    <form method="post" action="<%= notifications_path %>" role="form">
+    <form method="post" action="<%= notifications_path %>?admin_secret=<%= params[:admin_secret] %>" role="form">
     <div class="col-md-6">
       <div class="form-group">
         <table class="table table-bordered table-hover js-addresses" >
-          <tr>
-            <th>Phone #</th>
-            <th>Address</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Address</th>
+              <th>Pickup</th>
+            </tr>
+          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>

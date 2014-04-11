@@ -29,10 +29,12 @@ $(function() {
 
     layer.on('click', function(e) {
       pickup = quadToDay[e.target.feature.properties.QUAD];
-      console.log(pickup);
+      $('.js-pickup').html("People with " + pickup + " pickup");
       $.getJSON('/addresses.json?pickup=' + pickup, function(data) {
+      $('.js-addresses tbody').html('');
       data.forEach(function(address) {
-        $('.js-addresses tr:last').after('<tr><td>'+ address.street + '</td><td>' + address.pickup + '</tr>' );
+        var input = '<input type="text" name="number[]" value="' + address.mobile_number + '">';
+        $('.js-addresses tbody').append('<tr><td>' + input + address.street + '</td><td>' + address.mobile_number + '</tr>' );
         });
       });
     });

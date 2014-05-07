@@ -30,7 +30,7 @@ gem 'leaflet-rails'
 gem 'pg'
 
 # We don't always use Rails - but when we do - we prefer the latest stable release.
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.5'
 
 # Better CSS and a low barrier to entry for those familiar with CSS. Valid CSS is
 # valid SASS so your existing work will drop in nicely.
